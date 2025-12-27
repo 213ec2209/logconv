@@ -16,7 +16,7 @@ def test_logconv_runner():
     runner = get_runner(sim)
     runner.build(
         sources=sources,
-        hdl_toplevel="ALU",
+        hdl_toplevel="logconv",
         always=True,
     )
     runner.test(hdl_toplevel="logconv", test_module="test_logconv")
