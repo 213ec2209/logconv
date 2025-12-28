@@ -34,7 +34,7 @@ wire co;
 
     // Final log value = int_part + frac_log
   // assign log_val = int_part_q10 + $signed(frac_log);
-    brent_kung_adder_16bit kd2 ( .A(int_part_q10),.B($signed(frac_log)),.SUM(log_val));
+    bk_adder16bit kd2 ( .A(int_part_q10),.B($signed(frac_log)),.SUM(log_val));
 
     always @(*) begin
         if (is_zero) begin
