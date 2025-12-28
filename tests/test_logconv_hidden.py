@@ -4,8 +4,6 @@ from pathlib import Path
 import cocotb
 from cocotb.triggers import Timer
 from cocotb_tools.runner import get_runner
-import cocotb
-from cocotb.triggers import Timer
 
 @cocotb.test()
 async def test_encryption_1(dut):
@@ -58,10 +56,13 @@ async def test_encryption_4(dut):
 
 # CRITICAL: Pytest wrapper function
 def test_logconv_runner():
+    import os
+    from pathlib import Path
+    from cocotb_tools.runner import get_runner
     """Pytest wrapper to run cocotb tests"""
     sim = os.getenv("SIM", "icarus")
     proj_path = Path(__file__).resolve().parent.parent
-    
+    #logconv RTL source files( need all module)
     sources = [
         proj_path / "sources/logconv.v",
        proj_path /"sources/bk_adder16bit.v" ,
