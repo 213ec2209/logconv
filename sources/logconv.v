@@ -8,6 +8,7 @@ module logconv (
     assign sign_in = fp16_in[15];
     wire [4:0] exp = fp16_in[14:10];
     wire [9:0] mant = fp16_in[9:0];
+    wire [9:0] mantc;
       wire [15:0] frac_log ;
     // Special cases
     wire is_zero = (exp == 5'd0) && (mant == 10'd0);
@@ -19,10 +20,13 @@ module logconv (
 //assign log_out_q5_10 = log_val;
 wire co;
 
-
+//corection circuit
+cs   cs1 (.m(mant),.y(mantc[9:0]));
+    // Normalize mantissa to Q0.10 format (f = mant / 1024)
+    wire [15:0] f_q10 = {6'd0, mantc};  // Q0.10
 //assign mantc=mant; //mitchel  approx: log2(1 + f)=f
     // Normalize mantissa to Q0.10 format (f = mant / 1024)
-    wire [15:0] f_q10 = {6'd0, mant};  // Q0.10
+  //  wire [15:0] f_q10 = {6'd0, mant};  // Q0.10
     
 
  assign frac_log = f_q10;     // Q0.10 approx log2(1+f)
