@@ -39,7 +39,7 @@ def test_logconv_runner():
     proj_path = Path(__file__).resolve().parent
     
     sources = [
-        proj_path / "logconv.v",
+        proj_path / "sources/logconv.v",
     ]
     
     runner = get_runner(sim)
