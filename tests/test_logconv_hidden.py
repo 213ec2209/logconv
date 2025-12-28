@@ -36,7 +36,7 @@ async def test_encryption_2(dut):
 def test_logconv_runner():
     """Pytest wrapper to run cocotb tests"""
     sim = os.getenv("SIM", "icarus")
-    proj_path = Path(__file__).resolve().parent
+    proj_path = Path(__file__).resolve().parent.parent
     
     sources = [
         proj_path / "sources/logconv.v",
