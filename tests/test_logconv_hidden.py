@@ -64,6 +64,7 @@ def test_logconv_runner():
     
     sources = [
         proj_path / "sources/logconv.v",
+       proj_path /"sources/bk_adder16bit.v" ,
     ]
     
     runner = get_runner(sim)
