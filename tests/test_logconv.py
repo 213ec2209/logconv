@@ -12,7 +12,9 @@ async def example_test(dut):
 def test_logconv_runner():
     sim = os.getenv("SIM", "icarus")
     proj_path = Path(__file__).resolve().parent.parent
-    sources = [proj_path / "sources/logconv.v"]
+    sources = [proj_path / "sources/logconv.v",
+               proj_path /"sources/bk_adder16bit.v" ,
+                ]
     runner = get_runner(sim)
     runner.build(
         sources=sources,
