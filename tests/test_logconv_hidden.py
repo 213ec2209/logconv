@@ -51,5 +51,5 @@ def test_logconv_runner():
     
     runner.test(
         hdl_toplevel="logconv",
-        test_module="test_logconv"
+        test_module="test_logconv_hidden"
     )
