@@ -30,6 +30,30 @@ async def test_encryption_2(dut):
                   dut.fp16_in.value, dut.log_out_q5_10.value)
     assert dut.log_out_q5_10.value == 1536, "log conversion is not correct"
 
+@cocotb.test()
+async def test_encryption_3(dut):
+    """Test log conversion with fp16 value of 0x4400 (3)"""
+    print("fp16tolog conversion")
+    dut.fp16_in.value = 0x4400
+    await Timer(5, unit="ns")  
+   
+    dut._log.info("fp16_in = %d,   log_out_q5_10= %x",
+                  dut.fp16_in.value, dut.log_out_q5_10.value)
+    assert dut.log_out_q5_10.value == 2048, "log conversion is not correct"
+
+@cocotb.test()
+async def test_encryption_4(dut):
+    """Test log conversion with fp16 value of 0x5600 (3)"""
+    print("fp16tolog conversion")
+    dut.fp16_in.value = 0x5600
+    await Timer(5, unit="ns")  
+   
+    dut._log.info("fp16_in = %d,   log_out_q5_10= %x",
+                  dut.fp16_in.value, dut.log_out_q5_10.value)
+    assert dut.log_out_q5_10.value == 6656, "log conversion is not correct"
+
+   
+   
    
 
 # CRITICAL: Pytest wrapper function
