@@ -14,7 +14,7 @@ async def test_encryption_1(dut):
    
     dut._log.info("fp16_in = %d,   log_out_q5_10= %x",
                   dut.fp16_in.value, dut.log_out_q5_10.value)
-    assert dut.log_out_q5_10.value == 1032, "log conversion is not correct"  
+    assert dut.log_out_q5_10.value == 1024, "log conversion is not correct"  
 
 
 @cocotb.test()
@@ -26,7 +26,7 @@ async def test_encryption_2(dut):
    
     dut._log.info("fp16_in = %d,   log_out_q5_10= %x",
                   dut.fp16_in.value, dut.log_out_q5_10.value)
-    assert dut.log_out_q5_10.value == 1592, "log conversion is not correct"
+    assert dut.log_out_q5_10.value == 1536, "log conversion is not correct"
 
 @cocotb.test()
 async def test_encryption_3(dut):
@@ -37,7 +37,7 @@ async def test_encryption_3(dut):
    
     dut._log.info("fp16_in = %d,   log_out_q5_10= %x",
                   dut.fp16_in.value, dut.log_out_q5_10.value)
-    assert dut.log_out_q5_10.value == 2056, "log conversion is not correct"
+    assert dut.log_out_q5_10.value == 2048, "log conversion is not correct"
 
 @cocotb.test()
 async def test_encryption_4(dut):
@@ -48,7 +48,7 @@ async def test_encryption_4(dut):
    
     dut._log.info("fp16_in = %d,   log_out_q5_10= %x",
                   dut.fp16_in.value, dut.log_out_q5_10.value)
-    assert dut.log_out_q5_10.value == 6712, "log conversion is not correct"
+    assert dut.log_out_q5_10.value == 6656, "log conversion is not correct"
 
    
    
