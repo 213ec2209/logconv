@@ -21,9 +21,9 @@ module logconv (
 wire co;
 
 //corection circuit
-cs   cs1 (.m(mant),.y(mantc[9:0]));
+//cs   cs1 (.m(mant),.y(mantc[9:0]));
     // Normalize mantissa to Q0.10 format (f = mant / 1024)
-    wire [15:0] f_q10 = {6'd0, mantc};  // Q0.10
+    wire [15:0] f_q10 = {6'd0, mant};  // Q0.10
 //assign mantc=mant; //mitchel  approx: log2(1 + f)=f
     // Normalize mantissa to Q0.10 format (f = mant / 1024)
   //  wire [15:0] f_q10 = {6'd0, mant};  // Q0.10
