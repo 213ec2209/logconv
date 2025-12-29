@@ -13,10 +13,7 @@ def test_logconv_runner():
     sim = os.getenv("SIM", "icarus")
     proj_path = Path(__file__).resolve().parent.parent
     sources = [proj_path /"sources/logconv.v",
-               proj_path /"sources/bk_adder16bit.v" ,
-               proj_path /"sources/cs.v" ,
-               proj_path /"sources/ha.v" ,
-               proj_path /"sources/fa.v" ,
+               proj_path /"sources/bk_adder16bit.v",
               ]
     runner = get_runner(sim)
     runner.build(
